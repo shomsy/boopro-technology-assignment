@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  title: boopro-technology-assignment
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/V1/search:
+    get:
+      summary: ''
+      operationId: getApiV1Search
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  term: eojexjazfwisfuwmm
+                  score: 0
+                properties:
+                  term:
+                    type: string
+                    example: eojexjazfwisfuwmm
+                  score:
+                    type: integer
+                    example: 0
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                term:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: eojexjazfwisfuwmm
+              required:
+                - term
+      security: []
+  /api/V2/search:
+    get:
+      summary: ''
+      operationId: getApiV2Search
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  type: issues
+                  attributes:
+                    term: arvttlqaqmpllphku
+                    score: 0
+                properties:
+                  type:
+                    type: string
+                    example: issues
+                  attributes:
+                    type: object
+                    properties:
+                      term:
+                        type: string
+                        example: arvttlqaqmpllphku
+                      score:
+                        type: integer
+                        example: 0
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                term:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: arvttlqaqmpllphku
+              required:
+                - term
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
